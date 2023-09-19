@@ -5,4 +5,4 @@ cp:
 	go test -coverprofile ./primeapp/coverage.out ./primeapp/; go tool cover -html ./primeapp/coverage.out
 
 rp:
-	go run ./primeapp/
+	go run ./primeapp/ -v
