@@ -6,13 +6,23 @@ import (
 	"log"
 	"net/http"
 	"path"
+	"time"
 )
 
 // pathToTemplate for easy testing using path.Join
 var pathToTemplates = "./webapp/templates/"
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
-	_ = app.render(w, r, "home.html.gohtml", &TemplateData{})
+	td := make(map[string]any)
+
+	if app.Session.Exists(r.Context(), "test") {
+		msg := app.Session.GetString(r.Context(), "test")
+		td["test"] = msg
+	} else {
+		app.Session.Put(r.Context(), "test", "Hit this page at "+time.Now().UTC().String())
+	}
+
+	_ = app.render(w, r, "home.html.gohtml", &TemplateData{Data: td})
 }
 
 type TemplateData struct {
@@ -22,7 +32,7 @@ type TemplateData struct {
 
 func (app *application) render(w http.ResponseWriter, r *http.Request, t string, data *TemplateData) error {
 	// parse the template from disk
-	parsedTemplate, err := template.ParseFiles(path.Join(pathToTemplates, t))
+	parsedTemplate, err := template.ParseFiles(path.Join(pathToTemplates, t), path.Join(pathToTemplates, "base.layout.gohtml"))
 	if err != nil {
 		http.Error(w, "bad request", http.StatusBadRequest)
 		return err
