@@ -2,20 +2,22 @@ package data
 
 import (
 	"errors"
-	"golang.org/x/crypto/bcrypt"
 	"time"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 // User describes the data for the User type.
 type User struct {
-	ID        int       `json:"id"`
-	FirstName string    `json:"first_name"`
-	LastName  string    `json:"last_name"`
-	Email     string    `json:"email"`
-	Password  string    `json:"-"`
-	IsAdmin   int       `json:"is_admin"`
-	CreatedAt time.Time `json:"-"`
-	UpdatedAt time.Time `json:"-"`
+	ID         int       `json:"id"`
+	FirstName  string    `json:"first_name"`
+	LastName   string    `json:"last_name"`
+	Email      string    `json:"email"`
+	Password   string    `json:"-"`
+	IsAdmin    int       `json:"is_admin"`
+	CreatedAt  time.Time `json:"-"`
+	UpdatedAt  time.Time `json:"-"`
+	ProfilePic UserImage `json:"-"`
 }
 
 // PasswordMatches uses Go's bcrypt package to compare a user supplied password
@@ -28,7 +30,7 @@ func (u *User) PasswordMatches(plainText string) (bool, error) {
 		case errors.Is(err, bcrypt.ErrMismatchedHashAndPassword):
 			// invalid password
 			return false, nil
-		default:  
+		default:
 			return false, err
 		}
 	}

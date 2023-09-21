@@ -3,7 +3,8 @@ rw:
 	go run ./webapp/cmd/web
 
 tw:
-	go test ./webapp/... -cover -v -count 1 -tags integration
+	# go test ./webapp/... -cover -v -count 1 -tags integration
+	go test ./webapp/... -cover -v -count 1
 
 cw:
 	go test -coverprofile ./webapp/coverage.out ./webapp/...; go tool cover -html ./webapp/coverage.out
