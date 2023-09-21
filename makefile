@@ -3,10 +3,16 @@ rw:
 	go run ./webapp/cmd/web
 
 tw:
-	go test ./webapp/... -cover -v
+	go test ./webapp/... -cover -v -count 1
 
 cw:
 	go test -coverprofile ./webapp/coverage.out ./webapp/...; go tool cover -html ./webapp/coverage.out
+
+dw:
+	cd webapp; docker compose up -d
+
+dwd:
+	cd webapp; docker compose down
 
 # primeapp
 tp:

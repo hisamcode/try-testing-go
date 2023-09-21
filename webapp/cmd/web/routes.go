@@ -19,6 +19,11 @@ func (app *application) routes() http.Handler {
 	mux.Get("/", app.home)
 	mux.Post("/login", app.login)
 
+	mux.Route("/user", func(r chi.Router) {
+		r.Use(app.auth)
+		r.Get("/profile", app.profile)
+	})
+
 	// static assets
 	fileserver := http.FileServer(http.Dir("./webapp/static"))
 	mux.Handle("/static/*", http.StripPrefix("/static", fileserver))
