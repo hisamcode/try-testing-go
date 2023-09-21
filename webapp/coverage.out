@@ -1,12 +1,12 @@
 mode: set
-github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:12.42,14.16 2 1
+github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:12.42,14.16 2 0
 github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:14.16,16.3 1 0
-github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:18.2,19.16 2 1
+github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:18.2,19.16 2 0
 github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:19.16,21.3 1 0
-github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:23.2,23.16 1 1
-github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:26.56,28.16 2 1
+github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:23.2,23.16 1 0
+github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:26.56,28.16 2 0
 github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:28.16,30.3 1 0
-github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:32.2,34.18 2 1
+github.com/hisamcode/try-testing-go/webapp/cmd/web/db.go:32.2,34.18 2 0
 github.com/hisamcode/try-testing-go/webapp/cmd/web/forms.go:10.47,12.26 2 1
 github.com/hisamcode/try-testing-go/webapp/cmd/web/forms.go:12.26,14.3 1 1
 github.com/hisamcode/try-testing-go/webapp/cmd/web/forms.go:16.2,16.22 1 1
@@ -41,10 +41,10 @@ github.com/hisamcode/try-testing-go/webapp/cmd/web/handlers.go:99.2,105.59 3 1
 github.com/hisamcode/try-testing-go/webapp/cmd/web/handlers.go:108.94,109.72 1 1
 github.com/hisamcode/try-testing-go/webapp/cmd/web/handlers.go:109.72,111.3 1 1
 github.com/hisamcode/try-testing-go/webapp/cmd/web/handlers.go:112.2,113.13 2 1
-github.com/hisamcode/try-testing-go/webapp/cmd/web/main.go:20.13,30.16 6 0
-github.com/hisamcode/try-testing-go/webapp/cmd/web/main.go:30.16,32.3 1 0
-github.com/hisamcode/try-testing-go/webapp/cmd/web/main.go:33.2,47.16 7 0
-github.com/hisamcode/try-testing-go/webapp/cmd/web/main.go:47.16,49.3 1 0
+github.com/hisamcode/try-testing-go/webapp/cmd/web/main.go:21.13,31.16 6 0
+github.com/hisamcode/try-testing-go/webapp/cmd/web/main.go:31.16,33.3 1 0
+github.com/hisamcode/try-testing-go/webapp/cmd/web/main.go:34.2,48.16 7 0
+github.com/hisamcode/try-testing-go/webapp/cmd/web/main.go:48.16,50.3 1 0
 github.com/hisamcode/try-testing-go/webapp/cmd/web/middleware.go:14.67,16.2 1 1
 github.com/hisamcode/try-testing-go/webapp/cmd/web/middleware.go:18.72,19.71 1 1
 github.com/hisamcode/try-testing-go/webapp/cmd/web/middleware.go:19.71,24.17 2 1
