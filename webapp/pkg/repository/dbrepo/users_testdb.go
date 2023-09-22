@@ -22,10 +22,18 @@ func (m *TestDBRepo) AllUsers() ([]*data.User, error) {
 
 // GetUser returns one user by id
 func (m *TestDBRepo) GetUser(id int) (*data.User, error) {
-	var user = data.User{
-		ID: 1,
+	var user = data.User{}
+	if id == 1 {
+		user = data.User{
+			ID:        1,
+			FirstName: "Admin",
+			LastName:  "User",
+			Email:     "admin@example.com",
+		}
+		return &user, nil
 	}
-	return &user, nil
+
+	return nil, errors.New("user not found")
 }
 
 // GetUserByEmail returns one user by email address
@@ -48,7 +56,10 @@ func (m *TestDBRepo) GetUserByEmail(email string) (*data.User, error) {
 
 // UpdateUser updates one user in the database
 func (m *TestDBRepo) UpdateUser(u data.User) error {
-	return nil
+	if u.ID == 1 {
+		return nil
+	}
+	return errors.New("update failed")
 }
 
 // DeleteUser deletes one user from the database, by id
